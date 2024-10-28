@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fabrica</title>
+    <title></title>
 </head>
+
 <body>
     <h1>Control de Produccion</h1>
     <div id="login">
@@ -13,14 +15,17 @@
         <input type="password" id="contrasena" required>
         <button id="btn">Iniciar Sesion</button>
     </div>
-    <h2>Cantidad De Unidades Producidas</h2>
+    <h2>Ganancias</h2>
     <div id="produccion"></div>
+    <button id="capturarProduccion">Capturar Produccion Diaria</button>
     <div id="resultado"></div>
-    
+
     <script src="./script.js"></script>
     <script>
 
         document.getElementById("btn").addEventListener("click", iniciarSesion);
+        document.getElementById("capturarProduccion").addEventListener("click", capturarProduccionDiaria);
     </script>
 </body>
+
 </html>
