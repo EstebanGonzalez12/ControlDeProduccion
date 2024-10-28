@@ -20,30 +20,39 @@ function iniciarSesion() {
 
 function capturarProduccionDiaria() {
   let dia = 1;
-  const resultado = document.getElementById("resultado");
+  const resultadoDiv = document.getElementById("resultado");
 
   while (dia <= 7) {
-    let unidades = parseInt(
-      prompt("Ingresa la cantidad de unidades producidas: ")
-    );
+    let input = prompt("Ingresa la cantidad de unidades producidas: ");
+
+    if (input === null) {
+      alert("Operación cancelada.");
+      return; // Salimos si se cancela
+    }
+
+    let unidades = parseInt(input);
 
     if (!isNaN(unidades)) {
       let ganancia = calcularGanancia(unidades);
       mostrarGanancia(dia, ganancia);
       dia++;
     } else {
-      alert("Ingresa un valor valido");
+      alert("Ingresa un valor válido");
     }
   }
 }
 
-function calcularGanancia(){
-    if (unidades<50){
-        return 0
-    } else if(unidades<=100){
-        return unidades * 0.05
-    }else{
-        return unidades * 0.10
-    }
+function calcularGanancia(unidades) {
+  if (unidades < 50) {
+    return 0;
+  } else if (unidades <= 100) {
+    return unidades * 0.05;
+  } else {
+    return unidades * 0.1;
+  }
 }
 
+function mostrarGanancia(dia, ganancia) {
+  let resultado = document.getElementById("resultado");
+  resultado.innerHTML += "Día " + dia + ": Ganancias: $" + ganancia + "<br>";
+}
