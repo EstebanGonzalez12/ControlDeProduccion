@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Control de Produccion</h1>
-    <div>
+    <div id="login">
         <h2>Iniciar Sesion</h2>
         <input type="text" id="usuario" required>
         <input type="password" id="contrasena" required>
@@ -18,5 +18,9 @@
     <div id="resultado"></div>
     
     <script src="./script.js"></script>
+    <script>
+
+        document.getElementById("btn").addEventListener("click", iniciarSesion);
+    </script>
 </body>
 </html>
