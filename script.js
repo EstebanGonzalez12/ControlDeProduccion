@@ -20,14 +20,14 @@ function iniciarSesion() {
 
 function capturarProduccionDiaria() {
   let dia = 1;
-  const resultadoDiv = document.getElementById("resultado");
+  const resultadoDi = document.getElementById("resultado");
 
   while (dia <= 7) {
     let input = prompt("Ingresa la cantidad de unidades producidas: ");
 
     if (input === null) {
       alert("Operación cancelada.");
-      return; // Salimos si se cancela
+      return;
     }
 
     let unidades = parseInt(input);
